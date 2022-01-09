@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <img src="./img/arrow_left.png" alt="prev_img" class="arrow" id="backButton">
+            <div id="monthDisplay"></div>
+            <div id="createNewEvent">NEW EVENT</div>
+            <img src="./img/arrow_right.png" alt="next_img" class="arrow" id="nextButton">
+        </div>
+        <div id="weekdays">
+            <div>MON</div>
+            <div>TUE</div>
+            <div>WED</div>
+            <div>THU</div>
+            <div>FRI</div>
+            <div>SAT</div>
+            <div>SUN</div>
+
+        </div>
+        <div id="calendar"></div>
+    </div>
+    <div id="newEventModal">
+        <div class="eventContainer">
+            <h2>New Event</h2>
+            <form action="saveButton">
+                <input class="eventInput" id="eventTitleInput" placeholder="Event Title" required/>
+                <label for="start_time">Start time</label><input class="eventInput" type="time" id="eventStartTimeInput" required>
+                <label for="end_time">End time</label><input class="eventInput" type="time" id="eventEndTimeInput" required>
+                <label for="type">Type</label><select class="eventInput" name="" id="EventTypeInput" required>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Call">Call</option>
+                    <option value="Out of office">Out of office</option>
+                </select>
+                <label for="description">Details</label><input class="eventInput" type="text" id="eventDescriptionInput">
+            </form>
+            <button id="saveButton" class="saveButton">Save</button>
+            <button id="cancelButton" class="cancelButton">Cancel</button>
+        </div>
+    </div>
+    <div id="newEventModal2">
+        <div class="eventContainer">
+            <h2>New Event</h2>
+            <form action="saveButton2">
+                <input class="eventInput" id="eventTitleInput2" placeholder="Event Title" required/>
+                <input type="date" class="eventInput" id="eventNewDate" placeholder="mm/dd/yyyy" required>
+                <label for="start_time">Start time</label><input class="eventInput" type="time" id="eventStartTimeInput2" required>
+                <label for="end_time">End time</label><input class="eventInput" type="time" id="eventEndTimeInput2" required>
+                <label for="type">Type</label><select class="eventInput" name="" id="eventTypeInput2" required>
+                <option value="Meeting">Meeting</option>
+                <option value="Call">Call</option>
+                <option value="Out of office">Out of office</option>
+                </select>
+                <label for="description">Details</label><input class="eventInput" type="text" id="eventDescriptionInput2">
+            </form>
+            <button id="saveButton2" class="saveButton">Save</button>
+            <button id="cancelButton2" class="cancelButton">Cancel</button>
+
+        </div>
+    </div>
+    <div id="deleteEventModal">
+        <h2 id="eventText">Event</h2>
+        <p id="date"></p>
+        <p>from <span id="start_time">10:00</span> to <span id="end_time">11:00</span></p>
+        <p id="type">Meeting</p>
+        <p id="description"></p>
+        <button id="deleteButton" class="deleteButton">Delete</button>
+        <button id="closeButton" class="closeButton">Close</button>
+    </div>
+    <div id="modalBackDrop"></div>
+</body>
+
+</html>
